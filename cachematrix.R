@@ -1,7 +1,9 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Given R script contains two functions which implements the ligic
+## which allows to cache "solve" value of the square matrix. Once calculated for
+## some particular matrix, this value will always be available without recalculations.
 
-## Write a short comment describing this function
+## makeCacheMatrix function provide an ability to create a matrix model to store 
+## some of the matrix's parameters like matrix itself and value of solve function.
 makeCacheMatrix <- function(x = matrix()) {
     s <- NULL
     set <- function(y) {
@@ -16,7 +18,9 @@ makeCacheMatrix <- function(x = matrix()) {
          getsolve = getsolve)
 }
 
-## Write a short comment describing this function
+## cacheSolve function provides an ability to use the matrix's object created by
+## makeCacheMatrix function to calculate the value of the solve function and
+## re-use the cached value if any.
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
     s <- x$getsolve()
